@@ -1,0 +1,44 @@
+﻿<Window x:Class="Wpf_cfonb_project.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_cfonb_project"
+        mc:Ignorable="d"
+        Title="CFONB120 Parser" Height="600" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Bouton Import -->
+        <Button Content="Importer CFONB120" 
+                Width="200" Height="35" 
+                HorizontalAlignment="Left"
+                Click="ImportFile_Click" />
+
+        <!-- Header (01) -->
+        <GroupBox Header="Ligne 01 - Header" Grid.Row="1" Margin="0,10,0,0">
+            <DataGrid x:Name="DataGridHeader" AutoGenerateColumns="True" IsReadOnly="True"/>
+        </GroupBox>
+
+        <!-- Mouvements (04) -->
+        <GroupBox Header="Lignes 04 - Mouvements" Grid.Row="2" Margin="0,10,0,0">
+            <DataGrid x:Name="DataGridMovements" AutoGenerateColumns="True" IsReadOnly="True"/>
+        </GroupBox>
+
+        <!-- Compléments (05) -->
+        <GroupBox Header="Lignes 05 - Compléments" Grid.Row="3" Margin="0,10,0,0">
+            <DataGrid x:Name="DataGridComplements" AutoGenerateColumns="True" IsReadOnly="True"/>
+        </GroupBox>
+
+        <!-- Footer (07) -->
+        <GroupBox Header="Ligne 07 - Footer" Grid.Row="4" Margin="0,10,0,0">
+            <DataGrid x:Name="DataGridFooter" AutoGenerateColumns="True" IsReadOnly="True"/>
+        </GroupBox>
+    </Grid>
+</Window>
